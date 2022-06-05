@@ -7,8 +7,10 @@ function calculadora(){
 
         if(operacao == 0){
             alert('Operação cancelada.');
-        } 
-        else{
+        }else if(isNaN(operacao) || operacao < 0  || operacao > 6){
+            alert('Informe uma operação válida')
+        }
+        else{            
             let n1 = Number(prompt('Numero: '))
             let n2 = Number(prompt('Numero: '))
 
@@ -42,7 +44,8 @@ function calculadora(){
                 resultado = n1 ** n2
                 alert(`${n1} ^ ${n2} = ${resultado}`)
             }
-
+        }
+        /*            
         if(operacao == 1) soma()
         else if (operacao == 2) subtracao()
         else if (operacao == 3) multiplicacao()
@@ -51,13 +54,35 @@ function calculadora(){
         else if (operacao == 6) potenciacao()
         else ('Digite um valor válido.')
         }
-    }while(operacao != 0){ 
+        */
+       switch(operacao){
+            case 1:
+                soma()
+                break
+            case 2:
+                subtracao()
+                break
+            case 3:
+                multiplicacao()
+                break
+            case 4:
+                divisao_real()
+                break
+            case 5:
+                divisao_inteira()
+                break
+            case 6:
+                potenciacao()
+                break
+            
+       }
+    }while(operacao != 0)
 
         
         
         
        
-}
+
 
 }
 
